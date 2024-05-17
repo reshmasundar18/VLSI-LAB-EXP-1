@@ -1,8 +1,8 @@
-## VLSI-LAB-EXPERIMENTS
-# SIMULATION AND IMPLEMENTATION  OF LOGIC GATES,ADDERS AND SUBTRACTOR
+## VLSI-LAB-EXP-1
+# SIMULATION AND IMPLEMENTATION  OF LOGIC GATES,ADDERS AND SUBTRACTORS
 
 ## AIM: 
-        To simulate and synthesis Logic Gates,Adders and Subtractor using Xilinx ISE.
+        To simulate and synthesis Logic Gates,Adders and SubtractorS using Xilinx ISE.
 
 ## APPARATUS REQUIRED: 
                        Xilinx 14.7 Spartan6 FPGA
@@ -162,109 +162,8 @@ Endmodule
 
 ```
 ## OUTPUT:
-
-
-
-
-VERILOG CODE:
- 
-## Logic Gates
-
-```
-
-module LG (a, b, c0, c1, c2, c3, c4, c5, c6);
-input a, b; output c0, c1, c2, c3, c4, c5, c6; 
-and (c0, a, b); 
-or (c1, a, b); 
-xor (c2, a, b); 
-nand (c3, a, b);
-nor (c4, a, b); 
-xnor (c5, a, b); 
-not (c6, a); 
-endmodule
-
-```
-## Half Adder
-
-```
-module HA (a, b, sum, carry); 
-input a, b;
-output sum, carry; 
-xor g1(sum, a, b);
-and g2 (carry, a, b);
-endmodule
-```
-## Half Subtractor
-
-```
-module HS (a, b, diff, borrow);
-input a, b; 
-output diff, borrow;
-xor gl (diff, a, b); 
-and g2 (borrow, ~a, b);
-endmodule
-
-```
-## Full Adder
-
-```
-module FA(a, b, c, sum, carry);
-input a, b, c; 
-output sum, carry; 
-wire w1, w2, w3; 
-xor g1(w1, a, b); 
-and g2(w2, a, b); 
-xor g3(sum, w1 ,c); 
-and g4(w3, w1, c);
-or g5(carry, w3, w2); 
-endmodule
-
-```
-## Full Subtractor
-
-```
-module FS(a, b, c, diff, borrow); 
-input a, b, c;
-output diff, borrow; 
-wire x, y, z; 
-xor g1(x, a, b);
-and g2(y, ~a , b);
-xor g3(diff, x, c);
-and g4(z, c, ~x);
-or g5(borrow, y, z);
-endmodule
-
-```
-## 8 Bit Ripple Carry Adder
-
-```
-module FA(a, b, c, sum, carry); 
-input a, b, c;
-output sum, carry; 
-assign sum=a ^ b ^ c;
-assign carry=a & b|b & c|a & c;
-endmodule 
-
-module RCA(a, b, c, sum, carry);
-input [7:0] a, b; 
-input c; 
-output [7:0] sum;
-output carry;
-wire [6:0] w;
-FA f1(a[0], b[0], c, sum[0], w[0]); 
-FA f2(a[1], b[1], w[0], sum[1], w[1]); 
-FA f3(a[2], b[2], w[1], sum[2], w[2]); 
-FA f4(a[3], b[3], w[2], sum[3], w[3]); 
-FA f5(a[4], b[4], w[3], sum[4], w[4]); 
-FA f6(a[5], b[5], w[4], sum[5], w[5]); 
-FA f7(a[6], b[6], w[5], sum[6], w[6]);
-FA f8(a[7], b[7], w[6], sum[7], carry);
-Endmodule
-
-```
-
-## OUTPUT:
 ![image](https://github.com/reshmasundar18/VLSI-LAB-EXP-1/assets/166894571/896b6601-611e-4dc6-99a5-50d00069c0b1)
+
 
 
 ## RESULT:
